@@ -37,7 +37,13 @@ export async function lumberGet<T>(env: Env, path: string, query: Query = []): P
   for (let attempt = 0; attempt < 2; attempt++) {
     const res = await fetch(url, {
       method: "GET",
-      headers: { Authorization: `Bearer ${await token(env, attempt > 0)}`, Accept: "application/json" },
+      headers: {
+        Authorization: `Bearer ${await token(env, attempt > 0)}`,
+        "Api-Key": env.LUMBER_API_KEY,
+        "Api-Secret": env.LUMBER_API_SECRET,
+        "User-Id": env.LUMBER_USER_ID,
+        Accept: "application/json",
+      },
     });
     if (res.status === 401 && attempt === 0) continue; // expired token: log in again once
     if (res.status === 403) throw new Error("Lumber refused access (403). The API user may lack permission for this data.");
