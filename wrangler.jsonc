@@ -7,9 +7,8 @@
   "workers_dev": true,
   "observability": { "enabled": true },
   "kv_namespaces": [
-    // Create in Cloudflare: Storage & Databases > KV > Create "lwa-lumber-mcp-oauth", paste its ID here.
-    { "binding": "env.OAUTH_KV", "id": "6c035779065c478bbd669ed0cc45bede" }
-  ],
+  { "binding": "OAUTH_KV", "id": "6c035779065c478bbd669ed0cc45bede" }
+],
   "vars": {
     "ACUMATICA_URL": "https://lloydaubry.acumatica.com",
     "LUMBER_BASE_URL": "https://integration.lumberfi.com",
