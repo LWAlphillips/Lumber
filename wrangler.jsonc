@@ -1,7 +1,7 @@
 {
   // LWA Lumber MCP — read-only Lumber timesheet connector for Claude
   "name": "lwa-lumber-mcp",
-  "main": "src/index.ts",
+  "main": "index.ts",
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "workers_dev": true,
