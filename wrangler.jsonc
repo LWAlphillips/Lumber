@@ -1,0 +1,22 @@
+{
+  // LWA Lumber MCP — read-only Lumber timesheet connector for Claude
+  "name": "lwa-lumber-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+  "observability": { "enabled": true },
+  "kv_namespaces": [
+    // Create in Cloudflare: Storage & Databases > KV > Create "lwa-lumber-mcp-oauth", paste its ID here.
+    { "binding": "OAUTH_KV", "id": "REPLACE_WITH_KV_NAMESPACE_ID" }
+  ],
+  "vars": {
+    "ACUMATICA_URL": "https://lloydaubry.acumatica.com",
+    "LUMBER_BASE_URL": "https://integration.lumberfi.com",
+    // Who may connect (superadmins). Comma-separated Acumatica email or username, case-insensitive.
+    "ALLOWED_USERS": "REPLACE_WITH_YOUR_ACUMATICA_EMAIL"
+  }
+  // SECRETS — set in Cloudflare (Worker > Settings > Variables and Secrets, type "Secret"), never in this file:
+  //   ACU_CLIENT_ID, ACU_CLIENT_SECRET,
+  //   LUMBER_API_KEY, LUMBER_API_SECRET, LUMBER_USER_ID, LUMBER_COMPANY_ID
+}
