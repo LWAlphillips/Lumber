@@ -8,13 +8,13 @@
   "observability": { "enabled": true },
   "kv_namespaces": [
     // Create in Cloudflare: Storage & Databases > KV > Create "lwa-lumber-mcp-oauth", paste its ID here.
-    { "binding": "OAUTH_KV", "id": "REPLACE_WITH_KV_NAMESPACE_ID" }
+    { "binding": "3Nw1UBwO15KxaqmtkbLBgQ", "id": "6c035779065c478bbd669ed0cc45bede" }
   ],
   "vars": {
     "ACUMATICA_URL": "https://lloydaubry.acumatica.com",
     "LUMBER_BASE_URL": "https://integration.lumberfi.com",
     // Who may connect (superadmins). Comma-separated Acumatica email or username, case-insensitive.
-    "ALLOWED_USERS": "REPLACE_WITH_YOUR_ACUMATICA_EMAIL"
+    "ALLOWED_USERS": "kevin@lloydaubry, LPHILLIPS, lphillips@lloydaubry.com"
   }
   // SECRETS — set in Cloudflare (Worker > Settings > Variables and Secrets, type "Secret"), never in this file:
   //   ACU_CLIENT_ID, ACU_CLIENT_SECRET,
